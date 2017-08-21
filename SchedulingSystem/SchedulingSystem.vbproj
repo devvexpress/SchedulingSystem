@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4DE76C50-1F8E-4996-85E6-94B47828AD8A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>SchedulingSystem.My.MyApplication</StartupObject>
+    <RootNamespace>SchedulingSystem</RootNamespace>
+    <AssemblyName>SchedulingSystem</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>false</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SchedulingSystem.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SchedulingSystem.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>CEU_Logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=11.0.0.0, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\DevComponents.DotNetBar2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySqlBackup, Version=2.0.9.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\MySqlBackup.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountManagement.Designer.vb">
+      <DependentUpon>AccountManagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AccountManagement.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Actions.vb" />
+    <Compile Include="AddSchedule.Designer.vb">
+      <DependentUpon>AddSchedule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddSchedule.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssignSchedule.Designer.vb">
+      <DependentUpon>AssignSchedule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AssignSchedule.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AvailableRooms.Designer.vb">
+      <DependentUpon>AvailableRooms.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AvailableRooms.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlViewAssignedSchedule.Designer.vb">
+      <DependentUpon>ControlViewAssignedSchedule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ControlViewAssignedSchedule.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlViewSubjects.Designer.vb">
+      <DependentUpon>ControlViewSubjects.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ControlViewSubjects.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DatabaseConnectionConfiguration.Designer.vb">
+      <DependentUpon>DatabaseConnectionConfiguration.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseConnectionConfiguration.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataSetPrint.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPrint.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetPrint.vb">
+      <DependentUpon>DataSetPrint.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FacultyManagement.Designer.vb">
+      <DependentUpon>FacultyManagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FacultyManagement.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FacultySched.Designer.vb">
+      <DependentUpon>FacultySched.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FacultySched.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.vb">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalVariableModule.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PreviousSchoolYearSemester.Designer.vb">
+      <DependentUpon>PreviousSchoolYearSemester.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PreviousSchoolYearSemester.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintWindow.Designer.vb">
+      <DependentUpon>PrintWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PrintWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomManagement.Designer.vb">
+      <DependentUpon>RoomManagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RoomManagement.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScheduleManagement.Designer.vb">
+      <DependentUpon>ScheduleManagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleManagement.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SchoolYearSemester.Designer.vb">
+      <DependentUpon>SchoolYearSemester.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SchoolYearSemester.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnassignSchedule.Designer.vb">
+      <DependentUpon>UnassignSchedule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UnassignSchedule.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpForm.Designer.vb">
+      <DependentUpon>UpForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UpForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserWindow.Designer.vb">
+      <DependentUpon>UserWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AccountManagement.resx">
+      <DependentUpon>AccountManagement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddSchedule.resx">
+      <DependentUpon>AddSchedule.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssignSchedule.resx">
+      <DependentUpon>AssignSchedule.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AvailableRooms.resx">
+      <DependentUpon>AvailableRooms.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlViewAssignedSchedule.resx">
+      <DependentUpon>ControlViewAssignedSchedule.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlViewSubjects.resx">
+      <DependentUpon>ControlViewSubjects.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatabaseConnectionConfiguration.resx">
+      <DependentUpon>DatabaseConnectionConfiguration.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FacultyManagement.resx">
+      <DependentUpon>FacultyManagement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FacultySched.resx">
+      <DependentUpon>FacultySched.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PreviousSchoolYearSemester.resx">
+      <DependentUpon>PreviousSchoolYearSemester.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintWindow.resx">
+      <DependentUpon>PrintWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="7z.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="7z.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CEU_Logo.ico" />
+    <None Include="Resources\build10130.png" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\build9600.png" />
+    <None Include="Resources\google-calendar-logo.png" />
+    <None Include="Resources\Printer-small.png" />
+    <None Include="Resources\CEU_Logo.png" />
+    <None Include="Resources\gear.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\clock.png" />
+    <None Include="Resources\faculty_management.png" />
+    <None Include="Resources\subject_icon.png" />
+    <None Include="Resources\clock1.png" />
+    <None Include="Resources\room_icon_small.png" />
+    <Content Include="Schedule-Single.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="RoomManagement.resx">
+      <DependentUpon>RoomManagement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScheduleManagement.resx">
+      <DependentUpon>ScheduleManagement.vb</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Schedules.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="SchoolYearSemester.resx">
+      <DependentUpon>SchoolYearSemester.vb</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Subjects.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="UnassignSchedule.resx">
+      <DependentUpon>UnassignSchedule.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpForm.resx">
+      <DependentUpon>UpForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserWindow.resx">
+      <DependentUpon>UserWindow.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DataSetPrint.xsc">
+      <DependentUpon>DataSetPrint.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPrint.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPrint.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSetPrint.xss">
+      <DependentUpon>DataSetPrint.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giphy.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Microsoft.ReportViewer.Common">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.WinForms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="MySql.Data">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="MySqlBackup">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
